@@ -10,4 +10,20 @@ export const DefaultTheme = createTheme({
       main: "#ffffff",
     },
   },
+  components: {
+    MuiTab: {
+      defaultProps: {
+        sx: {
+          width: 60,
+        },
+      },
+    },
+    MuiTabs: {
+      defaultProps: {
+        sx: {
+          width: "100%",
+        },
+      },
+    },
+  },
 });
