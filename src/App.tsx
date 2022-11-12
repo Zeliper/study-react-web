@@ -2,23 +2,39 @@ import { Language, MenuBook } from "@mui/icons-material";
 import {
   Alert,
   AppBar,
+  Button,
   Collapse,
   Grid,
   IconButton,
+  InputBase,
   Menu,
   MenuItem,
+  styled,
+  SvgIcon,
+  SwipeableDrawer,
+  TextField,
   ThemeProvider,
   Toolbar,
   Typography,
 } from "@mui/material";
 import React from "react";
 import { useState } from "react";
-import { BrowserRouter, Route, Link, Outlet, Routes } from "react-router-dom";
+import {
+  BrowserRouter,
+  Route,
+  Link,
+  Outlet,
+  Routes,
+  useLocation,
+} from "react-router-dom";
 import MainPage from "./pages/MainPage";
 import { DefaultTheme } from "./themes/DefaultThemes";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
+import { alpha, Stack } from "@mui/system";
+import LogoIcon from "./assets/logo.svg";
+import { Container } from "react-dom";
 
 function App() {
   const [value, setValue] = React.useState(0);
@@ -37,33 +53,44 @@ function App() {
   const handleClose = () => {
     setAnchorEl(null);
   };
-
+  // const { state } = useLocation();
+  // console.log(state);
   return (
     <div>
-      <Box sx={{ Width: 100, height: 100, bgcolor: "background.paper" }}>
+      <Box sx={{ bgcolor: "background.paper" }}>
         <ThemeProvider theme={DefaultTheme}>
-          <Tabs
-            value={value}
-            onChange={handleChange}
-            variant="scrollable"
-            scrollButtons="auto"
-            aria-label="scrollable auto tabs example"
-          >
-            <Tab label="Icon" sx={{ width: 1000 }} />
-            <Tab label="Q&A" />
-            <Tab label="지식" />
-            <Tab label="커뮤니티" />
-            <Tab label="이벤트" />
-            <Tab label="JOBS" />
-            <Tab label="공지사항" />
-          </Tabs>
+          <Grid container spacing={2}>
+            {/* <SvgIcon component={LogoIcon} inheritViewBox/> */}
+
+            <Button>
+              <img src="img/logo.svg" />
+            </Button>
+            <Box sx={{ width: 65 }} />
+            <Button>Q&A</Button>
+            <Button>지식</Button>
+            <Button>커뮤니티</Button>
+            <Button>이벤트</Button>
+            <Button>JOBS</Button>
+            <Button>공지사항</Button>
+
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                paddingTop: "15px",
+                "& > :not(style)": { m: 1 },
+              }}
+            >
+              <TextField
+                id="demo-helper-text-misaligned-no-helper"
+                label="Search"
+                size="small"
+                inputProps={{ maxLength: 12 }}
+              />
+            </Box>
+          </Grid>
         </ThemeProvider>
       </Box>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<MainPage />} />
-        </Routes>
-      </BrowserRouter>
     </div>
   );
 }

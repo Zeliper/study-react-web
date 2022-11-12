@@ -25,5 +25,45 @@ export const DefaultTheme = createTheme({
         },
       },
     },
+    MuiButton: {
+      defaultProps: {
+        sx: {
+          paddingLeft: "20px",
+          paddingTop: "30px",
+          paddingRight: "20px",
+          paddingBottom: "15px",
+        },
+      },
+    },
+    // MuiTextField: {
+    //   defaultProps: {
+    //     sx: {
+    //       height: "15px",
+    //     },
+    //   },
+    // },
+    // MuiInputBase: {
+    //   defaultProps: {
+    //     sx: {
+    //       height: "30px",
+    //     },
+    //   },
+    // },
+    // MuiFormControl: {
+    //   defaultProps: {
+    //     sx: {
+    //       height: "30px",
+    //     },
+    //   },
+    // },
+    // MuiFormLabel: {
+    //   defaultProps: {
+    //     sx: {
+    //       height: "30px",
+    //       fontSize: "12px",
+    //       paddingBottom: "12px",
+    //     },
+    //   },
+    // },
   },
 });
