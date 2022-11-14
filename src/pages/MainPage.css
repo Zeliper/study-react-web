@@ -1,0 +1,10 @@
+.board-link {
+  transition: all 0.2s;
+}
+
+.board-link:hover {
+  color: #2d6efc;
+  transition: all 0.2s;
+  text-shadow: -1px -1px 0 #6495ff8c, 1px -1px 0 #6495ff8c, -1px 1px 0 #6495ff8c,
+    1px 1px 0 #6495ff8c;
+}
